@@ -1,0 +1,42 @@
+Introduction
+============
+
+This solution was prepared for a NxtGenUG (http://www.nxtgenug.net) session at Hereford (September 2011).  
+
+It shows some of the capabilities of three of the most popular micro-ORMs;
+
+	Massive by Rob Conery
+	Dapper.Net by Stackoverflow
+	Simple.Data by Mark Rendle
+
+The examples are in no way exhaustive but do show the most common functionality required for Data Access.
+
+Please feel free to modify and extend this code to your hearts content.
+
+Installation
+============
+
+Install Chinook.sql (Sql Server 2005+) [Version 1.3]
+Install Procedure.sql into the Chinook database.
+
+Each project has a connection string that will probably need changing to reflect your installation.
+
+Project Home Pages
+==================
+
+Chinook
+
+Code: http://chinookdatabase.codeplex.com/
+
+Massive
+
+Code: https://github.com/robconery/massive
+
+Dapper.Net
+
+Code: http://code.google.com/p/dapper-dot-net/
+
+Simple.Data
+
+Code: https://github.com/markrendle/Simple.Data
+Docs: http://simplefx.org/simpledata/docs/
