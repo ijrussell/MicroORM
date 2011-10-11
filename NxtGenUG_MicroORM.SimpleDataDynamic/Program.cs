@@ -8,10 +8,10 @@ namespace NxtGenUG_MicroORM.SimpleDataDynamic
         static void Main(string[] args)
         {
             SimpleQuery();
-            PagedQuery();
             FilteredQuery();
             Crud();
             SelectProcedure();
+            //PagedQuery();
 
             Console.ReadLine();
         }
@@ -67,8 +67,10 @@ namespace NxtGenUG_MicroORM.SimpleDataDynamic
 
             var result = service.GetCustomers(2);
 
-            foreach (var customer in result)
+            foreach (dynamic customer in result.Items)
                 ObjectDumper.Write(customer);
+
+            ObjectDumper.Write(string.Format("There are {0} records matching the criteria", result.TotalRecords));
         }
 
         private static void SimpleQuery()

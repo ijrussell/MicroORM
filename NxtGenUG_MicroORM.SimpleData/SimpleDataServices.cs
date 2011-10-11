@@ -21,7 +21,10 @@ namespace NxtGenUG_MicroORM.SimpleData
         {
             var pageStart = (pageNumber - 1) * pageSize;
             
-            return db.Customer.All().Skip(pageStart).Take(pageSize).OrderByCustomerId().Cast<Customer>();
+            return db.Customer.All()
+                     .Skip(pageStart).Take(pageSize)
+                     .OrderByCustomerId()
+                     .Cast<Customer>();
         }
 
         public IEnumerable<Customer> GetCustomersFromCountry(string countryName)

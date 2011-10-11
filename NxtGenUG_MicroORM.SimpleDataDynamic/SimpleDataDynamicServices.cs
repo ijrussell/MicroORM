@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Dynamic;
 using Simple.Data;
 
 namespace NxtGenUG_MicroORM.SimpleDataDynamic
@@ -17,11 +19,31 @@ namespace NxtGenUG_MicroORM.SimpleDataDynamic
             return db.Customer.All();
         }
 
-        public IEnumerable<dynamic> GetCustomers(int pageNumber, byte pageSize = 10)
+        public dynamic GetCustomers(int pageNumber, byte pageSize = 10)
         {
-            var pageStart = (pageNumber - 1) * pageSize;
+            dynamic result = new ExpandoObject();
+            
+            try
+            {
+                var pageStart = (pageNumber - 1) * pageSize;
 
-            return db.Customer.All().Skip(pageStart).Take(pageSize).OrderByCustomerId();
+                Future<int> count;
+
+                result.Items = db.Customer.All()
+                                .WithTotalCount(out count)
+                                .Skip(pageStart)
+                                .Take(pageSize)
+                                .OrderByCustomerId();
+
+                result.TotalRecords = count.Value;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Help", ex);
+
+            }
+            
+            return result;
         }
 
         public IEnumerable<dynamic> GetCustomersFromCountry(string countryName)

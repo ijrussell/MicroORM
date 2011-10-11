@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using Dapper;
 using Dapper.Contrib.Extensions;
 
@@ -22,15 +23,20 @@ namespace NxtGenUG_MicroORM.Dapper
             }
         }
 
-        public IEnumerable<Customer> GetCustomers(int pageNumber, byte pageSize = 10)
+        public IEnumerable<Customer> GetCustomers(int pageNumber, out int rowCount, byte pageSize = 10)
         {
-            var sql = "SELECT * FROM (SELECT ROW_NUMBER() OVER (ORDER BY CustomerId ASC) AS Row, * FROM Customer) AS Paged ";
+            var sql = "SELECT COUNT(*) FROM Customer; ";
+            sql += "SELECT * FROM (SELECT ROW_NUMBER() OVER (ORDER BY CustomerId ASC) AS Row, * FROM Customer) AS Paged ";
             var pageStart = (pageNumber - 1) * pageSize;
             sql += string.Format(" WHERE Row > {0} AND Row <={1}", pageStart, (pageStart + pageSize));
 
             using (var cn = GetOpenConnection())
             {
-                return cn.Query<Customer>(sql);
+                using (var multi = cn.QueryMultiple(sql))
+                {
+                    rowCount = multi.Read<int>().Single();
+                    return multi.Read<Customer>().ToList();
+                }
             }
         }
 

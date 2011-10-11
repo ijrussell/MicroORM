@@ -7,11 +7,11 @@ namespace NxtGenUG_MicroORM.Massive
     {
         static void Main(string[] args)
         {
-            SimpleQuery();
+            //SimpleQuery();
+            //FilteredQuery();
+            //Crud();
+            //SelectProcedure();
             PagedQuery();
-            FilteredQuery();
-            Crud();
-            SelectProcedure();
 
             Console.ReadLine();
         }
@@ -65,6 +65,8 @@ namespace NxtGenUG_MicroORM.Massive
 
             foreach (var customer in result.Items)
                 ObjectDumper.Write(customer);
+
+            ObjectDumper.Write(string.Format("There are {0} records matching the criteria", result.TotalRecords));
         }
 
         private static void SimpleQuery()

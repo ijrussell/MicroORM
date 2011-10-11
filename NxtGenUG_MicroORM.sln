@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Chinook.sql = Chinook.sql
 		Licence.txt = Licence.txt
 		Procedure.sql = Procedure.sql
-		ReadMe.txt = ReadMe.txt
+		README = README
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NxtGenUG_MicroORM.SimpleData", "NxtGenUG_MicroORM.SimpleData\NxtGenUG_MicroORM.SimpleData.csproj", "{A0EFAB4D-38CA-4D87-A22D-14F6C9C9C7F5}"

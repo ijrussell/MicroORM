@@ -7,10 +7,10 @@ namespace NxtGenUG_MicroORM.Dapper
         static void Main(string[] args)
         {
             SimpleQuery();
-            PagedQuery();
             FilteredQuery();
             Crud();
             SelectProcedure();
+            PagedQuery();
 
             Console.ReadLine();
         }
@@ -61,10 +61,14 @@ namespace NxtGenUG_MicroORM.Dapper
         {
             var service = new DapperServices();
 
-            var customers = service.GetCustomers(2);
+            int totalRecords;
+
+            var customers = service.GetCustomers(2, out totalRecords);
 
             foreach (var customer in customers)
                 ObjectDumper.Write(customer);
+
+            ObjectDumper.Write(string.Format("There are {0} records matching the criteria", totalRecords));
         }
 
         private static void SimpleQuery()

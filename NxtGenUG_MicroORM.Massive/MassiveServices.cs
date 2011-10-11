@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using Massive;
 
 namespace NxtGenUG_MicroORM.Massive
@@ -28,7 +24,8 @@ namespace NxtGenUG_MicroORM.Massive
 
         public IEnumerable<dynamic> GetCustomersFromCountry(string countryName)
         {
-            return db.All(where: "Country = @0", args: countryName);
+            //return db.All(where: "Country = @0", args: countryName);
+            return db.Find(Country: countryName, orderBy: "CustomerId ASC");
         }
 
         public dynamic Get(long id)
@@ -38,7 +35,9 @@ namespace NxtGenUG_MicroORM.Massive
 
         public long Insert(dynamic customer)
         {
-            return (long)db.Insert(customer);
+            dynamic record = db.Insert(customer);
+            
+            return (long)record.ID;
         }
 
         public void Update(dynamic customer)
