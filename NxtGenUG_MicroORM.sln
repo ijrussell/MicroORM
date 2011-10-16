@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NxtGenUG_MicroORM.SimpleDat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NxtGenUG_MicroORM.SimpleDataDynamic", "NxtGenUG_MicroORM.SimpleDataDynamic\NxtGenUG_MicroORM.SimpleDataDynamic.csproj", "{1789AF66-5889-4182-A402-82EF99B48BC1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NxtGenUG_MicroORM.PetaPoco", "NxtGenUG_MicroORM.PetaPoco\NxtGenUG_MicroORM.PetaPoco.csproj", "{5F0D9583-1020-4990-AB8D-B7A02DC56309}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,16 @@ Global
 		{1789AF66-5889-4182-A402-82EF99B48BC1}.Release|Mixed Platforms.Build.0 = Release|x86
 		{1789AF66-5889-4182-A402-82EF99B48BC1}.Release|x86.ActiveCfg = Release|x86
 		{1789AF66-5889-4182-A402-82EF99B48BC1}.Release|x86.Build.0 = Release|x86
+		{5F0D9583-1020-4990-AB8D-B7A02DC56309}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{5F0D9583-1020-4990-AB8D-B7A02DC56309}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{5F0D9583-1020-4990-AB8D-B7A02DC56309}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{5F0D9583-1020-4990-AB8D-B7A02DC56309}.Debug|x86.ActiveCfg = Debug|x86
+		{5F0D9583-1020-4990-AB8D-B7A02DC56309}.Debug|x86.Build.0 = Debug|x86
+		{5F0D9583-1020-4990-AB8D-B7A02DC56309}.Release|Any CPU.ActiveCfg = Release|x86
+		{5F0D9583-1020-4990-AB8D-B7A02DC56309}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{5F0D9583-1020-4990-AB8D-B7A02DC56309}.Release|Mixed Platforms.Build.0 = Release|x86
+		{5F0D9583-1020-4990-AB8D-B7A02DC56309}.Release|x86.ActiveCfg = Release|x86
+		{5F0D9583-1020-4990-AB8D-B7A02DC56309}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
